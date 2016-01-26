@@ -1,7 +1,9 @@
 require 'opal'
 require 'p5'
 require 'sandoz'
-include Sandoz#include the methods in sandoz into the global namespace
+#include the methods from sandoz into the global namespace
+include Sandoz
+#else have to do Sandoz::rect 10, 10, 10, 10
 
 class P5
 	def initialize(s, tag)
@@ -9,29 +11,18 @@ class P5
 	end
 end
 
-def defsetup(&block)
-	block
-end
-
-def defdraw(&block)
-	block
-end
-
-def defsketch(&block)
-	block
-end
-
 sketch = defsketch do |p|
 
-	init(p)
+	init(p)#This initializes Sandoz with the p5 object
 
-	setup = defsetup do
+	setup do
 		canvas(600, 600)
+
 	end
 
-	x = 2
+	x = 200
 
-	draw = defdraw do
+	draw do
 		background 0, 100, 255
 
 		fill 255, 0, 255
@@ -39,13 +30,8 @@ sketch = defsketch do |p|
 		stroke_weight(10)
 		rect x, 100, 100, 100
 		x+=1
-
-		no_stroke
-		ellipse width/2, height/3, 200, 200
 	end
 
-	`#{p}.setup = #{setup}`
-	`#{p}.draw = #{draw}`
 end
 
 P5.new(sketch, 'content')
