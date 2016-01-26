@@ -11,27 +11,39 @@ def defsetup(&block)
 	block
 end
 
-def defsketch
-	sketch = Proc.new do |p|
-
-		setup = defsetup do
-			`#{p}.createCanvas(700, 410)`
-		end
-
-		x = 100
-
-		draw = Proc.new do
-			`#{p}.background(0)`
-			`#{p}.rect(#{x}, 20, 100, 100)`
-			x+=1
-		end
-
-		`#{p}.setup = #{setup}`
-		`#{p}.draw = #{draw}`
-
-	end
+def defdraw(&block)
+	block
 end
 
-s = defsketch
+module Sandoz
 
-P5.new(s, 'content')
+	def init(p)
+		@@p = p
+	end
+
+
+end
+
+def defsketch(&block)
+	block
+end
+
+sketch = defsketch do |p|
+	setup = defsetup do
+		`#{p}.createCanvas(600, 600)`
+	end
+
+	x = 2
+
+	draw = defdraw do
+		`#{p}.background(0)`
+		`#{p}.fill(255, 0, 0)`
+		`#{p}.rect(#{x}, 20, 100, 100)`
+		x+=1
+	end
+
+	`#{p}.setup = #{setup}`
+	`#{p}.draw = #{draw}`
+end
+
+P5.new(sketch, 'content')
