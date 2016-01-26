@@ -27,7 +27,7 @@ module Sandoz
 		end
 	end
 
-	def fill(r, g=nil, b=nil, a=255)
+	def fill(r, g=nil, b=nil, a=nil)
 		if g==nil && b ==nil
 			`#{@@p}.fill(#{r})`
 		elsif a == nil
@@ -97,6 +97,28 @@ module Sandoz
 		else
 			`return #{@@p}.random(#{min})`
 		end
+	end
+
+	def color(r, g=nil, b=nil, a=nil)
+		if g==nil && b ==nil
+			`return #{@@p}.color(#{r})`
+		elsif a == nil
+			`return #{@@p}.color(#{r}, #{g}, #{b})`
+		else
+			`return #{@@p}.color(#{r}, #{g}, #{b}, #{a})`
+		end
+	end
+
+	def map(value, start1, stop1, start2, stop2)
+		`return #{@@p}.map(#{value}, #{start1}, #{stop1}, #{start2}, #{stop2})`
+	end
+
+	def millis
+		`return #{@@p}.millis();`
+	end
+
+	def no_fill
+		`#{@@p}.noFill()`
 	end
 
 end
