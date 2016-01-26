@@ -15,22 +15,28 @@ def defdraw(&block)
 	block
 end
 
+def defsketch(&block)
+	block
+end
+
 module Sandoz
 
 	def init(p)
 		@@p = p
 	end
 
+	def canvas(w, h)
+		`#{@@p}.createCanvas(#{w}, #{h})`
+	end
 
 end
 
-def defsketch(&block)
-	block
-end
+include Sandoz
 
 sketch = defsketch do |p|
+	init(p)
 	setup = defsetup do
-		`#{p}.createCanvas(600, 600)`
+		canvas(600, 600)
 	end
 
 	x = 2
