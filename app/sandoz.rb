@@ -19,12 +19,22 @@ module Sandoz
 		`#{@@p}.createCanvas(#{w}, #{h})`
 	end
 
-	def background(r, g, b)
-		`#{@@p}.background(#{r}, #{g}, #{b})`
+	def background(r, g=nil, b=nil)
+		if g == nil && b == nil
+			`#{@@p}.background(#{r})`
+		else
+			`#{@@p}.background(#{r}, #{g}, #{b})`
+		end
 	end
 
-	def fill(r, g, b, a=255)
-		`#{@@p}.fill(#{a}, #{g}, #{b}, #{a})`
+	def fill(r, g=nil, b=nil, a=255)
+		if g==nil && b ==nil
+			`#{@@p}.fill(#{r})`
+		elsif a == nil
+			`#{@@p}.fill(#{r}, #{g}, #{b})`
+		else
+			`#{@@p}.fill(#{r}, #{g}, #{b}, #{a})`
+		end
 	end
 
 	def rect(x, y, w, h)
@@ -51,8 +61,14 @@ module Sandoz
 		`#{@@p}.point(#{x}, #{y})`
 	end
 
-	def stroke(r, g, b)
-		`#{@@p}.stroke(#{r}, #{g}, #{b})`
+	def stroke(r, g=nil, b=nil, a=nil)
+		if g==nil && b ==nil
+			`#{@@p}.stroke(#{r})`
+		elsif a == nil
+			`#{@@p}.stroke(#{r}, #{g}, #{b})`
+		else
+			`#{@@p}.stroke(#{r}, #{g}, #{b}, #{a})`
+		end
 	end
 
 	def no_stroke
@@ -73,6 +89,14 @@ module Sandoz
 
 	def dist(x1, y1, x2, y2)
 		`return #{@@p}.dist(x1, y1, x2, y2)`
+	end
+
+	def random(min, max=nil)
+		if max
+			`return #{@@p}.random(#{min}, #{max})`
+		else
+			`return #{@@p}.random(#{min})`
+		end
 	end
 
 end
