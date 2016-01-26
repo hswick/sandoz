@@ -15,7 +15,7 @@ module Sandoz
 		@@p = p
 	end
 
-	def canvas(w, h)
+	def size(w, h)
 		`#{@@p}.createCanvas(#{w}, #{h})`
 	end
 
@@ -70,5 +70,9 @@ module Sandoz
   def draw(&block)
     `#{@@p}.draw = #{block}`
   end
+
+	def dist(x1, y1, x2, y2)
+		`return #{@@p}.dist(x1, y1, x2, y2)`
+	end
 
 end
