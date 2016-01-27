@@ -1,8 +1,15 @@
 A Gem Named Sandoz
 
-Useful for trying out libraries with Opal and React
+Make sure you have bundler installed
+
+    gem install bundler
+
+Then install dependencies:
 
     bundle install
+
+Run:
+
     bundle exec rackup
 
 How to Require:
