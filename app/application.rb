@@ -4,7 +4,7 @@ include Sandoz
 
 require 'particle'
 
-defsketch do
+defsketch("content") do
 
 	NUM_PARTICLES = 3000
 

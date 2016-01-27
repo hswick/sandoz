@@ -3,7 +3,7 @@ module Sandoz
 
 	#https://github.com/processing/p5.js/wiki/p5.js-overview#instantiation--namespace
 	#todo Add html element argument
-	def defsketch(&block)
+	def defsketch(element, &block)
 		sketch = Proc.new do |p|
 			init(p)
 			block.call
