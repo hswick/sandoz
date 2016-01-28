@@ -8,7 +8,11 @@ module Sandoz
 			init(p)
 			block.call
 		end
-		`new p5(#{sketch}, #{id})`
+		@p5 = `new p5(#{sketch}, #{id})`
+	end
+
+	def view_p
+		`return #{@p5}`
 	end
 
 	def init(p)
@@ -129,5 +133,9 @@ module Sandoz
 		else
 			`return #{@@p}.noise(#{x}, #{y}, #{z})`
 		end
+	end
+
+	def text(text, x, y)
+		`#{@@p}.text(#{text}, #{x}, #{y})`
 	end
 end

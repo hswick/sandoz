@@ -1,5 +1,3 @@
-
-
 class Particle
 	def initialize(d, speed)
     @x = random width
@@ -58,8 +56,8 @@ class Particle
   end
 
   def centroid_collisions
-      @@cx = random(width) if @@cx + @d/2 >= width || @@cx - @d/2 <= 0
-      @@cy = random(height) if @@cy + @d/2 >= height || @@cy - @d/2 <= 0
+    @@cx = random(width) if @@cx + @d/2 >= width || @@cx - @d/2 <= 0
+    @@cy = random(height) if @@cy + @d/2 >= height || @@cy - @d/2 <= 0
   end
 
   def centroid_brownian_motion
