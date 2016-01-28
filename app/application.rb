@@ -18,7 +18,6 @@ defsketch("content") do
 		end
 
 		@omega = Particle.new(20, 30)
-
 	end
 
 	draw do

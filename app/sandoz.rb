@@ -3,12 +3,12 @@ module Sandoz
 
 	#https://github.com/processing/p5.js/wiki/p5.js-overview#instantiation--namespace
 	#todo Add html element argument
-	def defsketch(element, &block)
+	def defsketch(id, &block)
 		sketch = Proc.new do |p|
 			init(p)
 			block.call
 		end
-		`new p5(#{sketch})`
+		`new p5(#{sketch}, #{id})`
 	end
 
 	def init(p)
@@ -121,4 +121,7 @@ module Sandoz
 		`#{@@p}.noFill()`
 	end
 
+	def noise(x, y=nil, z=nil)
+
+	end
 end
