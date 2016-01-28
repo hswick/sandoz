@@ -122,6 +122,12 @@ module Sandoz
 	end
 
 	def noise(x, y=nil, z=nil)
-
+		if y == nil && z == nil
+			`return #{@@p}.noise(#{x})`
+		elsif z == nil
+			`return #{@@p}.noise(#{x}, #{y})`
+		else
+			`return #{@@p}.noise(#{x}, #{y}, #{z})`
+		end
 	end
 end
