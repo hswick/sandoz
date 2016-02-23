@@ -1,5 +1,4 @@
 require "sandoz/version"
-require "p5"
 
 module Sandoz
   	#https://github.com/processing/p5.js/wiki/p5.js-overview#instantiation--namespace
