@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
 
-gem 'opal'
-gem 'sinatra'
+# Specify your gem's dependencies in sandoz.gemspec
+gemspec
