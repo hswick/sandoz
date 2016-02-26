@@ -1,4 +1,4 @@
-A Gem Named Sandoz
+# A Gem Named Sandoz
 
 Make sure you have bundler installed
 
