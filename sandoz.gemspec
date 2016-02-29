@@ -8,13 +8,11 @@ Gem::Specification.new do |s|
   s.version       = Sandoz::VERSION
   s.authors       = ["Harley Swick"]
   s.email         = ["hswick@example.com"]
-  s.summary       = %q{ A gem named Sandoz. }
-  s.description   = %q{ Ruby P5.js wrapper for trippy visuals. }
+  s.summary       = "A gem named Sandoz."
+  s.description   = "Ruby p5.js wrapper for trippy visuals."
   s.homepage      = "https://github.com/hswick/sandoz"
   s.license       = "MIT"
 
-  # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
-  # delete this section to allow pushing this gem to any host.
   if s.respond_to?(:metadata)
     s.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com'"
   else
@@ -22,11 +20,12 @@ Gem::Specification.new do |s|
   end
 
   s.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
-  s.bindir        = "exe"
-  s.executables   = s.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  s.bindir        = "bin"
+  s.executables   = ["sandoz"]
   s.require_paths = ["lib"]
 
   s.add_development_dependency 'bundler', '~> 1.11'
   s.add_dependency 'sinatra', '~> 1.4'
   s.add_dependency 'opal', '~> 0.9'
+  s.add_dependency 'thor', '~> 0.19.1'
 end
