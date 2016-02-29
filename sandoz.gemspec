@@ -7,10 +7,9 @@ Gem::Specification.new do |s|
   s.name             = 'sandoz'
   s.version       = Sandoz::VERSION
   s.authors       = ["Harley Swick"]
-  s.email         = ["TODO"]
-
-  s.summary       = %q{A gem named Sandoz.}
-  s.description   = %q{Ruby P5.js wrapper for trippy visuals.}
+  s.email         = ["hswick@example.com"]
+  s.summary       = %q{ A gem named Sandoz. }
+  s.description   = %q{ Ruby P5.js wrapper for trippy visuals. }
   s.homepage      = "https://github.com/hswick/sandoz"
   s.license       = "MIT"
 
