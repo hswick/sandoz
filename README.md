@@ -1,32 +1,38 @@
-# Sandoz
-
-A Gem Named Sandoz
+# A Gem Named Sandoz
 
 ## Installation
+Make sure you have bundler installed
 
+    gem install bundler
 Add this line to your application's Gemfile:
 
 ```ruby
 gem 'sandoz'
 ```
+Then install dependencies:
 
-And then execute:
+    bundle install
 
-    $ bundle
+Run:
 
-Or install it yourself as:
+    bundle exec rackup
 
-    $ gem install sandoz
+How to Require:
 
-## Usage
+    require 'opal'
+    require 'sandoz'
 
-This is assuming you are already have Opal boilerplate setup. See Opal gem docs.
+    #Have to do this to get functions in global namespace
+    include Sandoz
+    #Option 2:
+    Sandoz::defsketch do
+      Sandoz::setup do
+        Sandoz::size 600, 600
+        Sandoz::rect 100, 100, 100, 100
+      end
+    end
 
 ```ruby
-require 'opal'
-require 'sandoz'
-include Sandoz
-
 defsketch("content") do
   setup do
     size 600, 600
