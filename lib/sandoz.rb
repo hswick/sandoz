@@ -1,7 +1,5 @@
 require "sandoz/version"
 
-require "sandoz/version"
-
 module Sandoz
   	#https://github.com/processing/p5.js/wiki/p5.js-overview#instantiation--namespace
   	#todo Add html element argument
