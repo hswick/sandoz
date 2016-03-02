@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    sandoz (0.1.5)
+    sandoz (0.1.51)
       opal (~> 0.9)
       sinatra (~> 1.4)
 
