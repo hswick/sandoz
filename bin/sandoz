@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'sandoz'
+
+Sandoz::Cli.start(ARGV)
