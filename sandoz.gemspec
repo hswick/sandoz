@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'sandoz/version'
 
 Gem::Specification.new do |s|
-  s.name             = 'sandoz'
+  s.name          = 'sandoz'
   s.version       = Sandoz::VERSION
   s.authors       = ["Harley Swick"]
   s.email         = ["hswick@example.com"]
