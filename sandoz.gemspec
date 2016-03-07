@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.license       = "MIT"
 
   if s.respond_to?(:metadata)
-    s.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com'"
+    s.metadata['allowed_push_host'] = "https://rubygems.org"
   else
     raise "RubyGems 2.0 or newer is required to protect against public gem pushes."
   end
