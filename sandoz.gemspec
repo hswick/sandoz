@@ -1,7 +1,5 @@
 # coding: utf-8
-lib = File.expand_path('../lib', __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'sandoz/version'
+require File.expand_path('../lib/sandoz/version', __FILE__)
 
 Gem::Specification.new do |s|
   s.name          = 'sandoz'
@@ -19,13 +17,13 @@ Gem::Specification.new do |s|
     raise "RubyGems 2.0 or newer is required to protect against public gem pushes."
   end
 
-  s.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
+  #s.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
+  s.files         = `git ls-files`.split("\n")
   s.bindir        = "bin"
   s.executables   = ["sandoz"]
   s.require_paths = ["lib"]
 
   s.add_development_dependency 'bundler', '~> 1.11'
-  s.add_dependency 'sinatra', '~> 1.4'
   s.add_dependency 'opal', '~> 0.9'
   s.add_dependency 'thor', '~> 0.19.1'
 end
