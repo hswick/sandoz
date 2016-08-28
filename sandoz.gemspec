@@ -17,8 +17,7 @@ Gem::Specification.new do |s|
     raise "RubyGems 2.0 or newer is required to protect against public gem pushes."
   end
 
-  #s.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
-  s.files         = `git ls-files`.split("\n")
+  s.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   s.bindir        = "bin"
   s.executables   = ["sandoz"]
   s.require_paths = ["lib"]
